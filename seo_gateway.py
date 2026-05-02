@@ -1,28 +1,28 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
-app = FastAPI(title="Manufaktura Piekna SEO Gateway v1.3 Scaling")
+app = FastAPI(title="Manufaktura Piekna Marta Wojcicka SEO v1.5")
 
 # ==========================================
 # KONFIGURACJA BIZNESOWA & LINKI
 # ==========================================
-PAGE_TITLE = "Makijaż Permanentny i Fine Line Tattoo Giżycko | Manufaktura Piękna"
-META_DESCRIPTION = "Profesjonalny makijaż permanentny brwi, ust i kresek oraz subtelne tatuaże Fine Line w Giżycku. Ekskluzywne usługi w Manufakturze Piękna."
-KEYWORDS = "makijaż permanentny Giżycko, makijaż permanentny brwi Giżycko, makijaż permanentny ust, kreski permanentne, fine line tattoo Giżycko, najlepszy makijaż permanentny, studio makijażu, Manufaktura Piękna, Marta Wójcicka, PMU Giżycko"
+PAGE_TITLE = "Makijaż Permanentny i Fine Line Tattoo Giżycko | Manufaktura Piękna Marta Wójcicka"
+META_DESCRIPTION = "Profesjonalny makijaż permanentny brwi, ust i kresek oraz subtelne tatuaże Fine Line w Giżycku. Zapraszam do Manufaktury Piękna Marty Wójcickiej - najwyższa jakość i precyzja."
+KEYWORDS = "makijaż permanentny Giżycko, Marta Wójcicka, makijaż permanentny brwi, makijaż permanentny ust, fine line tattoo Giżycko, Manufaktura Piękna, tatuaż Giżycko"
 
+# Linki docelowe
 FACEBOOK_URL = "https://www.facebook.com/manufakturapieknamartawojcicka/" 
 INSTAGRAM_URL = "https://www.instagram.com/manufakturapieknamartawojcicka" 
 
-# Zmienna przechowująca Logo. Wklej tu swój "Bezpośredni odnośnik" PNG z Postimages.
-# Poniższy link jest przykładowy i wygaśnie, jeśli nie wstawisz tam swojego.
+# Twoje Logo (Złoty znak wodny)
 LOGO_URL = "https://i.postimg.cc/0y9L49dN/znak-wodny-zloty.png"
 
-# Paleta kolorów Premium Beauty
+# Paleta kolorów Premium
 BG_COLOR = "#0a0a0a" 
 ACCENT_COLOR = "#d4af37" 
 
 # ==========================================
-# SILNIK GENEROWANIA HTML5 & CSS3 (v1.3 RWD)
+# SILNIK GENEROWANIA HTML5 & CSS3
 # ==========================================
 HTML_TEMPLATE = f"""
 <!DOCTYPE html>
@@ -37,7 +37,8 @@ HTML_TEMPLATE = f"""
     
     <meta property="og:title" content="{PAGE_TITLE}">
     <meta property="og:description" content="{META_DESCRIPTION}">
-    <meta property="og:type" content="business.business">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{FACEBOOK_URL}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,12 +46,13 @@ HTML_TEMPLATE = f"""
     
     <style>
         :root {{
-            --bg-color: {BG_COLOR};
-            --accent-color: {ACCENT_COLOR};
+            --bg: {BG_COLOR};
+            --gold: {ACCENT_COLOR};
         }}
+        
         body {{
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, var(--bg-color) 0%, #1c1917 100%);
+            background: linear-gradient(135deg, var(--bg) 0%, #1c1917 100%);
             color: #f5f5f5;
             display: flex;
             justify-content: center;
@@ -59,45 +61,42 @@ HTML_TEMPLATE = f"""
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
-            overflow-x: hidden;
-        }}
-        
-        @keyframes fadeInDown {{
-            from {{ opacity: 0; transform: translateY(-30px); }}
-            to {{ opacity: 1; transform: translateY(0); }}
         }}
         
         .container {{
             text-align: center;
-            background: rgba(30, 30, 30, 0.6);
+            background: rgba(28, 25, 23, 0.7);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            padding: 4rem 3rem;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-            max-width: 650px;
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+            max-width: 600px;
             width: 100%;
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            animation: fadeInDown 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }}
+
         .logo {{
-            /* AKTUALIZACJA v1.3: Zwiekszona szerokosc i responsywnosc */
-            width: 200px;
-            max-width: 80%;
+            /* ZMIANA: Usunięto zaokrąglenia, logo jest prostokątem */
+            width: auto;
+            max-width: 320px;
             height: auto;
-            margin-bottom: 25px;
-            border-radius: 50%;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.1);
+            margin-bottom: 30px;
+            /* Efekt poświaty dla złotego koloru */
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
         }}
+
         h1 {{
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 0.5rem;
-            color: var(--accent-color);
+            color: var(--gold);
             font-weight: 600;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
+            line-height: 1.2;
         }}
+        
         h2 {{
             font-size: 1rem;
             color: #a8a29e;
@@ -106,71 +105,67 @@ HTML_TEMPLATE = f"""
             letter-spacing: 3px;
             text-transform: uppercase;
         }}
+
         p {{
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             line-height: 1.8;
             margin-bottom: 3rem;
             color: #d6d3d1;
             font-weight: 300;
         }}
+        
         .button-group {{
             display: flex;
             flex-direction: column;
             gap: 20px;
-            margin-bottom: 2rem;
         }}
+        
         .cta-button {{
             display: inline-block;
             background-color: transparent;
-            color: var(--accent-color);
+            color: var(--gold);
             text-decoration: none;
-            padding: 1.2rem 2rem;
-            font-size: 0.9rem;
-            font-weight: 400;
-            border-radius: 4px;
-            border: 1px solid var(--accent-color);
+            padding: 1.2rem;
+            font-size: 0.95rem;
+            border-radius: 5px;
+            border: 1px solid var(--gold);
             transition: all 0.4s ease;
             text-transform: uppercase;
             letter-spacing: 2px;
-            width: 100%;
-            box-sizing: border-box;
-            position: relative;
-            overflow: hidden;
+            font-weight: 400;
         }}
+        
         .cta-button:hover {{
-            background-color: var(--accent-color);
-            color: var(--bg-color);
+            background-color: var(--gold);
+            color: var(--bg);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
         }}
+
         .footer-note {{
             margin-top: 3rem;
             font-size: 0.75rem;
             color: #57534e;
             letter-spacing: 1px;
-            text-transform: uppercase;
         }}
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="{LOGO_URL}" alt="Manufaktura Piękna Logo" class="logo">
+        <img src="{LOGO_URL}" alt="Manufaktura Piękna Marta Wójcicka" class="logo">
         
-        <h1>Manufaktura Piękna</h1>
-        <h2>Permanent Makeup & Fine Line</h2>
+        <h1>Manufaktura Piękna<br>Marta Wójcicka</h1>
+        <h2>Makijaż Permanentny & Fine Line Tattoo</h2>
+        
         <p>{META_DESCRIPTION}</p>
         
         <div class="button-group">
-            <a href="{FACEBOOK_URL}" class="cta-button" rel="noopener noreferrer">
-                Odwiedź Profil na Facebooku
-            </a>
-            <a href="{INSTAGRAM_URL}" class="cta-button" rel="noopener noreferrer">
-                Obejrzyj Portfolio Instagram
-            </a>
+            <a href="{FACEBOOK_URL}" class="cta-button" target="_blank" rel="noopener">Odwiedź Facebook</a>
+            <a href="{INSTAGRAM_URL}" class="cta-button" target="_blank" rel="noopener">Obejrzyj Instagram</a>
         </div>
         
         <div class="footer-note">
-            Bezpieczny węzeł przekierowujący zoptymalizowany dla algorytmów wyszukiwania.
+            Oficjalny profil biznesowy • Giżycko
         </div>
     </div>
 </body>
