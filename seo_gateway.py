@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
-app = FastAPI(title="Manufaktura Piekna SEO Gateway v1.2 Premium")
+app = FastAPI(title="Manufaktura Piekna SEO Gateway v1.3 Scaling")
 
 # ==========================================
 # KONFIGURACJA BIZNESOWA & LINKI
@@ -13,15 +13,16 @@ KEYWORDS = "makijaż permanentny Giżycko, makijaż permanentny brwi Giżycko, m
 FACEBOOK_URL = "https://www.facebook.com/manufakturapieknamartawojcicka/" 
 INSTAGRAM_URL = "https://www.instagram.com/manufakturapieknamartawojcicka" 
 
-# Zmienna przechowująca Logo. Obecnie zawiera wygenerowany matematycznie elegancki złoty monogram MP.
-LOGO_URL = "https://i.postimg.cc/V6JghVVJ/zlote-logo-na-bialym-tle.jpg"
+# Zmienna przechowująca Logo. Wklej tu swój "Bezpośredni odnośnik" PNG z Postimages.
+# Poniższy link jest przykładowy i wygaśnie, jeśli nie wstawisz tam swojego.
+LOGO_URL = "https://i.postimg.cc/0y9L49dN/znak-wodny-zloty.png"
 
 # Paleta kolorów Premium Beauty
 BG_COLOR = "#0a0a0a" 
 ACCENT_COLOR = "#d4af37" 
 
 # ==========================================
-# SILNIK GENEROWANIA HTML5 & CSS3 (PREMIUM)
+# SILNIK GENEROWANIA HTML5 & CSS3 (v1.3 RWD)
 # ==========================================
 HTML_TEMPLATE = f"""
 <!DOCTYPE html>
@@ -61,7 +62,6 @@ HTML_TEMPLATE = f"""
             overflow-x: hidden;
         }}
         
-        /* Animacja wejścia */
         @keyframes fadeInDown {{
             from {{ opacity: 0; transform: translateY(-30px); }}
             to {{ opacity: 1; transform: translateY(0); }}
@@ -69,7 +69,6 @@ HTML_TEMPLATE = f"""
         
         .container {{
             text-align: center;
-            /* Efekt matowego szkła (Glassmorphism) */
             background: rgba(30, 30, 30, 0.6);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
@@ -82,7 +81,9 @@ HTML_TEMPLATE = f"""
             animation: fadeInDown 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
         }}
         .logo {{
-            width: 110px;
+            /* AKTUALIZACJA v1.3: Zwiekszona szerokosc i responsywnosc */
+            width: 200px;
+            max-width: 80%;
             height: auto;
             margin-bottom: 25px;
             border-radius: 50%;
@@ -90,7 +91,7 @@ HTML_TEMPLATE = f"""
         }}
         h1 {{
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 0.5rem;
             color: var(--accent-color);
             font-weight: 600;
@@ -98,7 +99,7 @@ HTML_TEMPLATE = f"""
             text-transform: uppercase;
         }}
         h2 {{
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #a8a29e;
             font-weight: 300;
             margin-bottom: 2.5rem;
@@ -124,7 +125,7 @@ HTML_TEMPLATE = f"""
             color: var(--accent-color);
             text-decoration: none;
             padding: 1.2rem 2rem;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 400;
             border-radius: 4px;
             border: 1px solid var(--accent-color);
