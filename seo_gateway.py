@@ -17,7 +17,7 @@ LOGO_URL = "https://i.postimg.cc/0y9L49dN/znak-wodny-zloty.png"
 # ==========================================
 # TELEMETRIA & AUTORYZACJA GOOGLE (ZAKTUALIZOWANE)
 # ==========================================
-GOOGLE_ANALYTICS_ID = "G-XXXXXXXXXX" 
+GOOGLE_ANALYTICS_ID = "G-HC1LYB5Y7Z" 
 # TWOJA WERYFIKACJA GOOGLE:
 GOOGLE_VERIFICATION_ID = "A8-zrO-QuWPykQu2KzEvQrOpbAjcjRjbNSzBZNNldt0"
 
