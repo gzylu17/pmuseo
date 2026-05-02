@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
-app = FastAPI(title="Manufaktura Piekna Marta Wojcicka SEO v1.5")
+app = FastAPI(title="Manufaktura Piekna Marta Wojcicka SEO v1.7 GSC-Verified")
 
 # ==========================================
 # KONFIGURACJA BIZNESOWA & LINKI
@@ -10,14 +10,17 @@ PAGE_TITLE = "Makijaż Permanentny i Fine Line Tattoo Giżycko | Manufaktura Pi�
 META_DESCRIPTION = "Profesjonalny makijaż permanentny brwi, ust i kresek oraz subtelne tatuaże Fine Line w Giżycku. Zapraszam do Manufaktury Piękna Marty Wójcickiej - najwyższa jakość i precyzja."
 KEYWORDS = "makijaż permanentny Giżycko, Marta Wójcicka, makijaż permanentny brwi, makijaż permanentny ust, fine line tattoo Giżycko, Manufaktura Piękna, tatuaż Giżycko"
 
-# Linki docelowe
 FACEBOOK_URL = "https://www.facebook.com/manufakturapieknamartawojcicka/" 
 INSTAGRAM_URL = "https://www.instagram.com/manufakturapieknamartawojcicka" 
-
-# Twoje Logo (Złoty znak wodny)
 LOGO_URL = "https://i.postimg.cc/0y9L49dN/znak-wodny-zloty.png"
 
-# Paleta kolorów Premium
+# ==========================================
+# TELEMETRIA & AUTORYZACJA GOOGLE (ZAKTUALIZOWANE)
+# ==========================================
+GOOGLE_ANALYTICS_ID = "G-XXXXXXXXXX" 
+# TWOJA WERYFIKACJA GOOGLE:
+GOOGLE_VERIFICATION_ID = "A8-zrO-QuWPykQu2KzEvQrOpbAjcjRjbNSzBZNNldt0"
+
 BG_COLOR = "#0a0a0a" 
 ACCENT_COLOR = "#d4af37" 
 
@@ -35,14 +38,23 @@ HTML_TEMPLATE = f"""
     <meta name="author" content="Marta Wójcicka">
     <title>{PAGE_TITLE}</title>
     
+    <meta name="google-site-verification" content="{GOOGLE_VERIFICATION_ID}" />
+    
     <meta property="og:title" content="{PAGE_TITLE}">
     <meta property="og:description" content="{META_DESCRIPTION}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{FACEBOOK_URL}">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id={GOOGLE_ANALYTICS_ID}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+      gtag('config', '{GOOGLE_ANALYTICS_ID}');
+    </script>
     
     <style>
         :root {{
@@ -77,12 +89,10 @@ HTML_TEMPLATE = f"""
         }}
 
         .logo {{
-            /* ZMIANA: Usunięto zaokrąglenia, logo jest prostokątem */
             width: auto;
             max-width: 320px;
             height: auto;
             margin-bottom: 30px;
-            /* Efekt poświaty dla złotego koloru */
             filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
         }}
 
