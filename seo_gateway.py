@@ -11,7 +11,7 @@ META_DESCRIPTION = "Profesjonalny makijaż permanentny brwi, ust i kresek oraz s
 KEYWORDS = "makijaż permanentny Giżycko, Marta Wójcicka, makijaż permanentny brwi, makijaż permanentny ust, fine line tattoo Giżycko, Manufaktura Piękna, tatuaż Giżycko"
 
 FACEBOOK_URL = "https://www.facebook.com/manufakturapieknamartawojcicka/" 
-INSTAGRAM_URL = "https://www.instagram.com/manufakturapieknamartawojcicka" 
+INSTAGRAM_URL = "https://www.instagram.com/manufakturapieknamartawojcicka/" 
 LOGO_URL = "https://i.postimg.cc/0y9L49dN/znak-wodny-zloty.png"
 
 # ==========================================
