@@ -14,7 +14,7 @@ FACEBOOK_URL = "https://www.facebook.com/manufakturapieknamartawojcicka/"
 INSTAGRAM_URL = "https://www.instagram.com/manufakturapieknamartawojcicka" 
 
 # Zmienna przechowująca Logo. Obecnie zawiera wygenerowany matematycznie elegancki złoty monogram MP.
-LOGO_URL = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='60' r='58' fill='none' stroke='%23d4af37' stroke-width='2'/%3E%3Ctext x='60' y='75' font-family='serif' font-size='45' fill='%23d4af37' text-anchor='middle'%3EMP%3C/text%3E%3C/svg%3E"
+LOGO_URL = "https://i.postimg.cc/V6JghVVJ/zlote-logo-na-bialym-tle.jpg"
 
 # Paleta kolorów Premium Beauty
 BG_COLOR = "#0a0a0a" 
