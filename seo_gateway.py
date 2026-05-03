@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
-app = FastAPI(title="Manufaktura Piekna Marta Wojcicka SEO v1.7 GSC-Verified")
+app = FastAPI(title="Manufaktura Piekna Marta Wojcicka SEO v1.10 + Admin Rezerwacje")
 
 # ==========================================
 # KONFIGURACJA BIZNESOWA & LINKI
@@ -14,11 +14,13 @@ FACEBOOK_URL = "https://www.facebook.com/manufakturapieknamartawojcicka/"
 INSTAGRAM_URL = "https://www.instagram.com/manufakturapieknamartawojcicka/" 
 LOGO_URL = "https://i.postimg.cc/0y9L49dN/znak-wodny-zloty.png"
 
+# DOCELOWY LINK DO KALENDARZA NA SUBDOMENIE:
+ADMIN_URL = "https://rezerwacje.mpmwojcicka.pl" 
+
 # ==========================================
-# TELEMETRIA & AUTORYZACJA GOOGLE (ZAKTUALIZOWANE)
+# TELEMETRIA & AUTORYZACJA GOOGLE
 # ==========================================
-GOOGLE_ANALYTICS_ID = "G-HC1LYB5Y7Z" 
-# TWOJA WERYFIKACJA GOOGLE:
+GOOGLE_ANALYTICS_ID = "G-HC1LYB5Y7Z" # Pamiętaj o podmianie na swój kod GA4
 GOOGLE_VERIFICATION_ID = "A8-zrO-QuWPykQu2KzEvQrOpbAjcjRjbNSzBZNNldt0"
 
 BG_COLOR = "#0a0a0a" 
@@ -73,6 +75,25 @@ HTML_TEMPLATE = f"""
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
+            position: relative;
+        }}
+
+        /* STYL PRZYCISKU ADMIN */
+        .admin-link {{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: rgba(214, 211, 209, 0.3);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            z-index: 100;
+        }}
+        
+        .admin-link:hover {{
+            color: var(--gold);
         }}
         
         .container {{
@@ -161,6 +182,8 @@ HTML_TEMPLATE = f"""
     </style>
 </head>
 <body>
+    <a href="{ADMIN_URL}" class="admin-link">Admin</a>
+    
     <div class="container">
         <img src="{LOGO_URL}" alt="Manufaktura Piękna Marta Wójcicka" class="logo">
         
